@@ -60,7 +60,7 @@ There are many concerns my team and our testers came up with that have been addr
 
 
 
-<b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our summary video.</a></b><br>
-<b> <a href="https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease/blob/main/videoscript">Here is our summary video transcript.</a></b><br>
+<b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here iss our video summary.</a></b><br>
+<b> <a href="https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease/blob/main/videoscript">Here is our video summary transcript.</a></b><br>
 
 
