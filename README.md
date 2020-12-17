@@ -50,7 +50,7 @@ There are many concerns my team and our testers came up with that have been addr
     
    Our forms work! It is ready for real world use but could be better by fixing a few minor issues. Most have to do with overall aesthetic and specifications based on who is using the form and what they require. A few hours work on our forms is more than enough to render it ready for real-world use. Discussions with subject matter experts would help us get to the ready stage we want to be at. We were able to call up the Boston Housing Authority and ask them a few questions about specifications for their release form.
    
-   The future is bright for this project. After sending letters to our partners, we have received assurance that they are ready and willing to implement further progressions to our forms. With future volunteers, the Assembly Line Project is going to work on continuing to develop our forms and keep up with them. Our project has grown so much from my <a href=”https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease/blob/main/Intro%20Pitch.pptx">Intro pitch</a><br> to what it is now. With a constant strive to make the form as clean, precise and easy as can be, there is so much growth between what I thought I was capable of doing and what I actually did. Hopefully, the future volunteers who continue this automation take steps to fix the few leftover issues and send this out into the real world.
+   The future is bright for this project. After sending letters to our partners, we have received assurance that they are ready and willing to implement further progressions to our forms. With future volunteers, the Assembly Line Project is going to work on continuing to develop our forms and keep up with them. Our project has grown so much from my <b> <a href="https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease/blob/main/Intro%20Pitch.pptx">introduction pitch</a><br></b><br> to what it is now. With a constant strive to make the form as clean, precise and easy as can be, there is so much growth between what I thought I was capable of doing and what I actually did. Hopefully, the future volunteers who continue this automation take steps to fix the few leftover issues and send this out into the real world.
     
 <b>Final Thoughts</b><br>
     There are a  people I could not have survived this class without, and at the top of that list are my two teammates, Kayla Gallagher and Mike Carroll. These two were always there for help, feedback and testing. I also want to thank my classmates in Coding the Law, Professor David Colarusso, Quinten Steenhuis and the entire docassemble team. It is always great working with people who want to teach you and help you at the same time.
@@ -61,6 +61,5 @@ There are many concerns my team and our testers came up with that have been addr
 
  <b> <a href="www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our video instead</a><br></b><br>
 # </ CodingTheLawFinal>
-
 
 
