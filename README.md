@@ -17,7 +17,7 @@ Joelle Ataya, jataya@su.suffolk.edu
 
 My teammates and I worked on three release of information forms. Although we each worked on one specific form, we were a constant part of each others work and were able to use many of the similar source codes for all three forms.
 
-The three interviews can be found<br>
+The three release forms can be found below:<br>
   1.<a href="https://github.com/SuffolkLITLab/docassemble-AttorneyAuthorizationforRelease">Attorney Authoization for Release</a><br>
   2.<a href="https://github.com/SuffolkLITLab/docassemble-BHAReleaseAuthorization">Boston Housing Authority Release</a><br>
   3.<a href="https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease">General Release</a><br>
