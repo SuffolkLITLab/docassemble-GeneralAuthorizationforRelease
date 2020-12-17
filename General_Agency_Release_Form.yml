@@ -1,0 +1,332 @@
+include:
+  - docassemble.MAVirtualCourt:basic-questions.yml
+---
+comment: |
+  The metadata section controls the tab title and saved interview title. You can delete this section if you include this YAML file in another YAML file.
+metadata:
+  title: |
+    General Agency Release Form
+  short title: |
+    General Release Form
+---
+comment: |
+  This section is used by MAVirtualCourts to control how some of the questions work.
+mandatory: True
+code: |
+  interview_metadata # make sure we initialize the object
+  if not defined("interview_metadata['General_Agency_Release_Form']"):
+    interview_metadata.initializeObject('General_Agency_Release_Form')
+  interview_metadata['General_Agency_Release_Form'].update({
+    'title': 'General Agency Release Form',
+    'short title': 'General Release Form',
+    'description': 'This is a general agency release of information form to be used when an organization is releasing client records within their possession to an organization, attorney, etc.',
+    'original_form': '',
+    'allowed courts': [
+    ],
+    'categories': [
+      'Consumer and Debt',
+      'Domestic Violence / Safety of self',
+      'Education',
+      'Employment / Unemployment',
+      'Family Law',
+      'Guardianship',
+      'Health and Mental Health',
+      'Housing',
+      'Immigration',
+      'Income and benefits',
+      'Rights of incarcerated/formerly incarcerated',
+    ],
+    'logic block variable': 'General_Agency_Release_Form',
+    'attachment block variable': 'General_Agency_Release_Form_attachment',
+    'typical role': 'unknown',
+  })
+---
+features:
+  navigation: True
+---
+sections:
+  - review_General_Agency_Release_Form: Review your answers
+---
+id: interview_order_General_Agency_Release_Form
+code: |
+  # This is a placeholder to control logic flow in this interview
+
+  basic_questions_intro_screen 
+  General_Agency_Release_Form_intro
+  # Set the allowed courts for this interview
+  allowed_courts = interview_metadata["General_Agency_Release_Form"]["allowed courts"]
+  nav.set_section('review_General_Agency_Release_Form')
+  # Below sets the user_role by asking a question.
+  # You can set user_role directly instead to either 'plaintiff' or 'defendant'
+  user_ask_role
+  other_parties[0].address
+  time_valid
+  # Set the answer file name.
+  set_parts(subtitle=str(users))
+  set_progress(12.5)
+  other_parties[0]
+  witnesses[0]
+  set_progress(25.0)
+  other_parties[0].address.address
+  users[0]
+  set_progress(37.5)
+  other_parties[1]
+  # Save (anonymized) interview statistics.
+  # store_variables_snapshot(data={'zip': users[0].address.zip})
+  General_Agency_Release_Form_preview_question # Pre-canned preview screen
+  basic_questions_signature_flow
+  users[0].signature
+  witnesses[0].signature
+  users.there_is_another= False
+  General_Agency_Release_Form = True
+---
+comment: |
+  This question is used to introduce your interview. Please customize
+id: General Agency Release Form
+continue button field: General_Agency_Release_Form_intro
+question: |
+  General Agency Release Form
+subquestion: |
+  This is a general agency release of information form to be used when an organization is releasing client records within their possession to an organization, attorney, etc.
+---
+id: Review your form before you sign it
+continue button field: General_Agency_Release_Form_preview_question
+question: |
+  Review your form before you sign it
+subquestion: |
+  Here is a preview of the form you'll sign on the next page. 
+  
+   ${ pdf_concatenate(General_Agency_Release_Form_attachment['preview'], filename='General_Agency_Release_Form.pdf')}
+---
+id: your name
+question:  |
+  What is your name?
+subquestion: |
+  The name of the person whose information is to be released.
+fields:
+  - First Name: users[0].name.first
+  - Middle Name: users[0].name.middle
+    required: False
+  - Last Name: users[0].name.last
+  - Suffix: users[0].name.suffix
+    code: |
+      name_suffix()
+    required: False  
+---
+id: Agency Information
+question: |
+  Agency Information
+subquestion: |
+  Where is the agency located?
+fields:
+  - 'Full address of the agency releasing the information.': other_parties[0].address
+---
+id: Specifications
+question: |
+  Specifications
+subquestion: |
+  How long is this release valid for?
+fields:
+  - 'The amount of time the release of information will be valid for. (i.e. one year)': time_valid
+---
+progress: 100
+mandatory: True
+id: Your form is ready to download and file
+question: |
+  Your form is ready to download and file
+subquestion: |
+  Thank you ${users}. Your form is ready to download and deliver.
+  
+  Below is a preview of your form.
+  
+  ${pdf_concatenate(General_Agency_Release_Form_attachment['final'], filename='General_Agency_Release_Form.pdf') }
+need: General_Agency_Release_Form
+attachment code: General_Agency_Release_Form_attachment['final']
+---
+generic object: Individual
+question: |
+  What is ${ x.possessive('address') }?
+fields:
+  - Street address: x.address.address
+    address autocomplete: True
+  - Unit: x.address.unit
+    required: False
+  - City: x.address.city
+  - State: x.address.state
+    default: MA   
+    code: |
+      states_list()   
+  - Zip: x.address.zip
+    required: True
+---
+id: names of witnesses
+question: |
+  **If required**, list the name of the witness below
+subquestion: |
+  Who witnessed the signing of this form?
+list collect: True
+fields:
+  - First name: witnesses[i].name.first
+    required: False
+  - Middle name: witnesses[i].name.middle
+    required: False
+  - Last name: witnesses[i].name.last
+    required: False
+  - Suffix: witnesses[i].name.suffix
+    code: |
+      name_suffix()
+    required: False
+---
+id: names of people
+generic object: PeopleList
+question: |
+  List your ${x.object_name()} or agencies below.
+subquestion: |
+  Click "${word("Add another")}" to add more.
+list collect: True
+fields:
+  - Is this ${noun_singular(x.object_name())} a person or business?: x[i].person_type
+    input type: radio
+    choices:
+      - Business or organization: business
+      - Person: individual
+  - First name: x[i].name.first
+    show if:
+      variable: x[i].person_type
+      is: "individual"
+  - Last name: x[i].name.last
+    show if:
+      variable: x[i].person_type      
+      is: "individual"
+  - Suffix: x[i].name.suffix
+    code: |
+      name_suffix()
+    show if:
+      variable: x[i].person_type      
+      is: "individual"
+    required: False      
+  - Name of business or organization: x[i].name.first
+    show if:
+      variable: x[i].person_type
+      is: business
+---
+decoration: file-signature
+question: |
+  Sign your forms.
+subquestion: |
+  Your forms are almost ready. You need to sign them first.
+  
+  Use the mouse or touchpad on your computer or
+  sign with your finger on your phone. 
+   
+  You can send the forms to someone else to sign if you choose the "phone" option.
+field: signature_choice
+buttons:  
+  - Sign on my phone: phone
+    image: mobile-alt
+  - Sign on this computer: this device
+    image: desktop
+continue button field: saw_signature_choice
+script: |
+  <script>
+    $(".da-field-buttons > div > .btn-da-custom").last().after("<br>")
+    $(".da-field-buttons > div > .btn-da-custom").first().before("<br>")
+  </script>
+---
+id: names of opposing parties
+question: |
+  % if users==plaintiffs:
+  Identify who is releasing the information below
+  % else:
+  Please list the name of each **plaintiff** or petitioner in this case below
+  % endif
+subquestion: |
+  Click "${word("Add another")}" to add more.
+list collect: 
+  enable: True
+  label: |
+    % if users==plaintiffs:
+    Defendant/Respondent ${i+1}    
+    % else:
+    Plaintiff/Petitioner ${i+1}
+    % endif
+fields:
+  - Are they a person, or a business?: other_parties[i].person_type
+    input type: radio
+    choices:
+      - Business or organization: business
+      - Person: individual
+  - First name: other_parties[i].name.first
+    show if:
+      variable: other_parties[i].person_type
+      is: "individual"
+  - Last name: other_parties[i].name.last
+    show if:
+      variable: other_parties[i].person_type      
+      is: "individual"
+  - Suffix: other_parties[i].name.suffix
+    code: |
+      name_suffix()
+    show if:
+      variable: other_parties[i].person_type      
+      is: "individual"
+    required: False      
+  - Name of organization or business: other_parties[i].name.first
+    show if:
+      variable: other_parties[i].person_type
+      is: business
+---
+objects:
+  - General_Agency_Release_Form_attachment: DADict
+---
+attachment:
+    variable name: General_Agency_Release_Form_attachment[i]
+    name: General Release Form
+    filename: General_Release_Form
+    docx template file: General_Agency_Release_Form.docx
+---
+id: General_Agency_Release_Form review screen
+event: review_General_Agency_Release_Form
+question: |
+  Placeholder Review Screen
+subquestion: |
+  Edit your answers below
+review: 
+  - Edit: other_parties[0].address
+    button: |
+      Full address of the agency releasing the information.:
+      ${ other_parties[0].address }
+  - Edit: time_valid
+    button: |
+      The amount of time the release of information will be valid for. (i.e. one year):
+      ${ time_valid }
+  - Edit: witnesses[0].signature
+    button: |
+      witnesses[0].signature:
+      ${ witnesses[0].signature }
+  - Edit: other_parties[0].name.first
+    button: |
+      other_parties[0]:
+      ${ other_parties[0] }
+  - Edit: witnesses[0].name.first
+    button: |
+      witnesses[0]:
+      ${ witnesses[0] }
+  - Edit: users[0].signature
+    button: |
+      users[0].signature:
+      ${ users[0].signature }
+  - Edit: other_parties[0].address.address
+    button: |
+      other_parties[0].address.address:
+      ${ other_parties[0].address.address }
+  - Edit: users[0].name.first
+    button: |
+      users[0]:
+      ${ users[0] }
+  - Edit: other_parties[1]
+    button: |
+      other_parties[1]:
+      ${ other_parties[1] }
+      
+      
