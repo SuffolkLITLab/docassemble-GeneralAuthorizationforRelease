@@ -60,7 +60,7 @@ There are many concerns my team and our testers came up with that have been addr
 
 
 
-<b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our video.</a></b><br>
+<b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our summary video.</a></b><br>
 # </ CodingTheLawFinal>
 
 
