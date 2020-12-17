@@ -5,3 +5,6 @@ This is an online version of a general release of information, which allows orga
 
 # Author
 Joelle Ataya, jataya@su.suffolk.edu
+
+<b>What?</b><br>
+For our final class project for Coding the Law at Suffolk University Law School, we were tasked with solving a real-world issue using programs and coding languages we learned throughout the semester.
