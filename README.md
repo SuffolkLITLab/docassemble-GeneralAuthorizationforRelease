@@ -60,8 +60,7 @@ There are many concerns my team and our testers came up with that have been addr
 
 
 
-
-<a href=“https://www.youtube.com/watch?v=HVaM_goHiAY”>TL;DR so watch this video</a>
+<b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our video.</a></b><br>
 # </ CodingTheLawFinal>
 
 
