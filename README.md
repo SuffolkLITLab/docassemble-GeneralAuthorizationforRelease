@@ -61,7 +61,7 @@ There are many concerns my team and our testers came up with that have been addr
 
 
 
-<a href=“https://www.youtube.com/watch?v=HVaM_goHiAY”>TL;DR, watch out video.</a>
+<a href=“https://www.youtube.com/watch?v=HVaM_goHiAY”>TL;DR so watch this video</a>
 # </ CodingTheLawFinal>
 
 
