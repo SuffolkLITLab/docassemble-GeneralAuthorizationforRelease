@@ -5,6 +5,7 @@ This is an online version of a general release of information, which allows orga
 
 # Author
 Joelle Ataya, jataya@su.suffolk.edu
+<br> collaborating with Kayla Gallagher and Mike Carroll, working on the Document Assembly Line Project.
 
 <b>Who?</b><br>
     For our final class project in Coding the Law at Suffolk University Law School, we were tasked with solving a real-world issue using programs and coding languages we learned throughout the semester. The Suffolk LITLab is an experiential program combining legal services and legal tech. A big project the LITLab is working on is the Document Assembly Line Project, where court forms and *pro se* materials are automated and made more user-friendly. During the COVID-19 pandemic, everything got harder, especially obtaining legal services. With things falling apart, the Assembly Line Project was created to solve this problem of high legal demand. Collaborating with the Suffolk LITLab, my partners Kayla Gallagher, Mike Carroll and I worked on automating three release of information forms: a general release, an attorney release, and a Boston Housing release form. The users and stakeholders involved are in two groups. One group includes the Document Assembly Line project and its participants, including David Colarusso and Quinten Steenhuis. The second includes the client whose information is being released, the agency that is releasing the information, and the attorney or organization who is obtaining that information.
