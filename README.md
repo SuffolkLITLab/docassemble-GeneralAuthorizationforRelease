@@ -45,6 +45,6 @@ The future is bright for this project. After sending letters to our partners, we
 There are a few people I could not have survived this class without, and at the top of that list are my two teammates, Kayla Gallagher and Mike Carroll. These two were always there for help, feedback and testing. 
 
 
-# <a href=”https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR, just watch our video</a><br>
+  <a href="www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here's our video instead</a><br>
 # </ CodingTheLawFinal>
 
