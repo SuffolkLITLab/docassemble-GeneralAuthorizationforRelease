@@ -144,6 +144,7 @@ need: General_Agency_Release_Form
 attachment code: General_Agency_Release_Form_attachment['final']
 ---
 generic object: Individual
+id: "what is x possessive address"
 question: |
   What is ${ x.possessive('address') }?
 fields:
@@ -211,6 +212,7 @@ fields:
       is: business
 ---
 decoration: file-signature
+id: "sign your forms"
 question: |
   Sign your forms.
 subquestion: |
