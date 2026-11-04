@@ -59,8 +59,6 @@ There are many concerns my team and our testers came up with that have been addr
     There are a  people I could not have survived this class without, and at the top of that list are my two teammates, Kayla Gallagher and Mike Carroll. These two were always there for help, feedback and testing. I also want to thank my classmates in Coding the Law, Professor David Colarusso, Quinten Steenhuis and the entire docassemble team. It is always great working with people who want to teach you and help you at the same time.
 
 
-
-
 <b> <a href="https://www.youtube.com/watch?v=HVaM_goHiAY">TL;DR so here is our video summary.</a></b><br>
 <b> <a href="https://github.com/SuffolkLITLab/docassemble-GeneralAuthorizationforRelease/blob/main/videoscript">Here is our video summary transcript.</a></b><br>
 
