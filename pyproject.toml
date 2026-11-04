@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools>=80.9.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.GeneralAuthorizationforRelease"
+version = "0.0.1"
+description = "An online version of a general release of information, which allows organizations to release information about a specific person to someone of their choice"
+readme = "README.md"
+authors = [
+    { name = "Joelle Ataya", email = "litlab@suffolk.edu" },
+]
+dependencies = []
+license = "MIT"
+license-files = [
+    "LICENSE",
+]
+
+[project.urls]
+Homepage = "https://docassemble.org"
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+]
